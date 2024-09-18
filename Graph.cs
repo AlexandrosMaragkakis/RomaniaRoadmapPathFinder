@@ -1,18 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿
 
-namespace RomaniaRoadmapPathFinder
-{   
+namespace RomaniaRoadmapPathfinder
+{
     public class Graph
     {
+        /* The Graph class is the data structure that the strategies use to find the path. It is a singleton class that contains the adjacency list of the cities. */
         private static Graph _instance;
         public Dictionary<string, HashSet<string>> AdjacencyList { get; }
 
+        // Singleton pattern
         public static Graph GetInstance()
-        { 
+        {
             if (_instance == null)
             {
                 _instance = new Graph();
@@ -92,6 +90,7 @@ namespace RomaniaRoadmapPathFinder
             AddEdge("Eforie", "Hirsova");
         }
 
+        /* Add an edge between two cities */
         private void AddEdge(string source, string destination)
         {
             if (!AdjacencyList.ContainsKey(source))

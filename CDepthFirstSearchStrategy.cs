@@ -1,16 +1,13 @@
-﻿using RomaniaRoadmapPathFinder;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿
 
-namespace RomaniaRoadmapPathFinder
+namespace RomaniaRoadmapPathfinder
 {
-    public class CDepthFirstSearchStrategy : ISearchStrategy
+    public class CDepthFirstSearchStrategy : ISearchStrategy // ai generated
     {
+        /* The DepthFirstSearchStrategy class is a concrete strategy that implements the DFS algorithm. */
+        public string Name => "Depth First Search";
         public Graph graph = Graph.GetInstance();
-        
+
         private string? _targetCity;
         private HashSet<string> visited;
 
@@ -19,11 +16,11 @@ namespace RomaniaRoadmapPathFinder
             visited = new HashSet<string>();
         }
 
-        
 
+        /* The FindPath method is the implementation of the DFS algorithm. */
         public List<string> FindPath(string startCity, string targetCity)
         {
-        
+
             _targetCity = targetCity;
             List<string> path = new List<string>();
             if (!graph.AdjacencyList.ContainsKey(startCity) || !graph.AdjacencyList.ContainsKey(targetCity))
@@ -36,7 +33,7 @@ namespace RomaniaRoadmapPathFinder
             return path;
         }
 
-
+        /* The DFSUtil method is a recursive utility function that performs the DFS algorithm. */
         private bool DFSUtil(string city, List<string> path)
         {
             visited.Add(city);

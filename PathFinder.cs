@@ -1,24 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
+﻿
 
-namespace RomaniaRoadmapPathFinder
+namespace RomaniaRoadmapPathfinder
 {
-    public class PathFinder
+    public class Pathfinder
     {
+        /* The PathFinder class is the context class that uses the strategy. It has a reference to the ISearchStrategy interface. */
         public ISearchStrategy? _strategy;
-        public PathFinder() { }
-        
-
+        public Pathfinder() { }
         public void SetStrategy(ISearchStrategy strategy)
         {
             _strategy = strategy;
         }
 
-        
+        /* The PathFinder class delegates the pathfinding algorithm to the strategy object. */
         public List<string> Search(string startCity, string targetCity)
         {
             return _strategy.FindPath(startCity, targetCity);

@@ -1,19 +1,16 @@
-﻿using RomaniaRoadmapPathFinder;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿
 
-namespace RomaniaRoadmapPathFinder
+namespace RomaniaRoadmapPathfinder
 {
     public class CBreadthFirstSearchStrategy : ISearchStrategy
     {
-
+        /* The CBreadthFirstSearchStrategy class is a concrete strategy that implements the BFS algorithm. */
+        public string Name => "Breadth First Search";
         public Graph graph = Graph.GetInstance();
         public CBreadthFirstSearchStrategy() { }
 
 
+        /* The FindPath method is the implementation of the BFS algorithm. */
         public List<string> FindPath(string startCity, string targetCity)
         {
             List<string> path = new List<string>();
